@@ -130,8 +130,12 @@ const App = () => {
               </div>
             </div>
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-white/20 shadow-2xl overflow-hidden bg-gray-300 flex items-center justify-center text-gray-500">
-              {/* プロフィール画像のプレースホルダー */}
-              <User size={80} />
+              {/* ここを img タグに変更します */}
+              <img 
+                src="/profile.jpg" 
+                alt="プロフィール写真" 
+                className="w-full h-full object-cover" 
+              />
             </div>
           </div>
         </div>
