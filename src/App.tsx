@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Github, ExternalLink, Mail, User, Code, Briefcase, Award, ChevronDown, BookOpen, Brain, MessageCircle, Database } from 'lucide-react';
+import React from 'react';
+import { Github, Mail, User, Code, Briefcase, Award, ChevronDown, BookOpen, Brain, MessageCircle, Database } from 'lucide-react';
 
 // --- データ定義 ---
 
@@ -17,13 +17,13 @@ const profile = {
 };
 
 const skills = [
-  { name: "Python", level: 70 },
-  { name: "Streamlit", level: 70 },
-  { name: "LangChain", level: 75 },
+  { name: "Python", level: 90 },
+  { name: "Streamlit", level: 85 },
+  { name: "LangChain", level: 80 },
   { name: "OpenAI API", level: 80 },
-  { name: "HTML/CSS", level: 65 },
+  { name: "HTML/CSS", level: 70 },
   { name: "SQL", level: 60 },
-  { name: "Git/GitHub", level: 65 },
+  { name: "Git/GitHub", level: 75 },
 ];
 
 const projects = [
@@ -69,11 +69,10 @@ const projects = [
 ];
 
 const history = [
-
   {
-    year: "2016",
-    title: "鹿児島大学 工学部 卒業",
-    desc: "情報生体システム工学科にて基礎的な工学知識を習得。"
+    year: "2018 - 2026",
+    title: "学習塾「GOJYUゼミ」経営 / 代表",
+    desc: "個人事業主として学習塾を開校。集客・指導・経営の全業務を担い、生徒数70名、売上成長率197%を達成。「対話」を重視した指導で400名以上の生徒をサポート。"
   },
   {
     year: "2016 - 2017",
@@ -81,10 +80,10 @@ const history = [
     desc: "新卒・中途採用メディアの提案営業。香川・東京で新規開拓から深耕営業まで経験し、社内表彰を受賞。KPI達成に向けた行動力と顧客折衝力を習得。"
   },
   {
-    year: "2018 - 2026",
-    title: "学習塾「GOJYUゼミ」経営 / 代表",
-    desc: "個人事業主として学習塾を開校。集客・指導・経営の全業務を担い、生徒数70名、売上成長率197%を達成。「対話」を重視した指導で400名以上の生徒をサポート。"
-  },
+    year: "2016",
+    title: "鹿児島大学 工学部 卒業",
+    desc: "情報生体システム工学科にて基礎的な工学知識を習得。"
+  }
 ];
 
 // --- コンポーネント ---
@@ -97,8 +96,6 @@ const SectionTitle = ({ children, icon: Icon }: { children: React.ReactNode, ico
 );
 
 const App = () => {
-  const [activeTab, setActiveTab] = useState('all');
-
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-gray-700">
       
