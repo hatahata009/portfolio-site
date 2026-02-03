@@ -142,7 +142,7 @@ const App = () => {
             </div>
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-white/20 shadow-2xl overflow-hidden bg-gray-300 flex items-center justify-center text-gray-500">
               {/* 写真を表示する場合は以下を使用 */}
-              {/* <img src="/profile.jpg" alt="プロフィール写真" className="w-full h-full object-cover" /> */}
+              <img src="/profile.jpg" alt="プロフィール写真" className="w-full h-full object-cover" /> 
               <User size={80} />
             </div>
           </div>
