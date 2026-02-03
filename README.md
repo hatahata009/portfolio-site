@@ -1,73 +1,109 @@
-# React + TypeScript + Vite
+# Satoshi Hatanaka - Portfolio Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+未経験エンジニアとしての転職活動用に作成した、個人のポートフォリオサイトです。
+React (TypeScript) と Tailwind CSS を使用して構築されており、これまでの経歴、スキルセット、開発したアプリケーション（Works）をまとめています。
 
-Currently, two official plugins are available:
+## ✨ 特徴
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **モダンな技術選定**: Vite + React + TypeScript による高速で型安全な開発環境。
+* **レスポンシブデザイン**: Tailwind CSS を活用し、PC・スマホ両方で見やすいUIを実現。
+* **コンポーネント指向**: 再利用可能なコンポーネント設計と、Lucide Reactによる統一感のあるアイコン使用。
+* **Works紹介**: 開発したAIアプリケーション（英会話アプリ、RAGエージェントなど）の詳細、GitHubリポジトリ、デモアプリへのリンクを掲載。
 
-## React Compiler
+## 🛠 使用技術
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Frontend Framework**: React (v19)
+* **Language**: TypeScript
+* **Styling**: Tailwind CSS
+* **Build Tool**: Vite
+* **Icons**: Lucide React
+* **Deployment**: Vercel (推奨)
 
-## Expanding the ESLint configuration
+## 📂 掲載プロジェクト (Works)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+ポートフォリオ内で紹介している主な開発実績です。
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **AI英会話アプリ**
+   * 音声認識(Whisper)と生成AIを活用した英会話練習アプリ。
+   * [Demo App](https://english-app-deploy-29sh7uhksshpfdaeqhresz.streamlit.app/) / [GitHub](https://github.com/hatahata009/english_app_deploy)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2. **問い合わせ対応自動化エージェント**
+   * 社内ドキュメント(RAG)を活用した自律型AIチャットボット。
+   * [Demo App](https://customerconnectapp-ebqlsokwtzh9tpappbkwx7w.streamlit.app/) / [GitHub](https://github.com/hatahata009/customer_connect_app)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+3. **子育て支援チャットボット**
+   * 専門家ペルソナ（医師、料理家など）を選択して相談できるマルチエージェントアプリ。
+   * [Demo App](https://childcareassistant-app-9ohzykaqhn59ukjrxdelpf.streamlit.app/) / [GitHub](https://github.com/hatahata009/childcare_assistant-app)
+
+## 🚀 ローカルでの実行方法
+
+このプロジェクトを手元のPCで動かすための手順です。
+
+### 前提条件
+* Node.js (v18以上推奨) がインストールされていること
+
+### 手順
+
+1. **リポジトリをクローン**
+   ```bash
+   git clone [https://github.com/hatahata009/portfolio-site.git](https://github.com/hatahata009/portfolio-site.git)
+   cd portfolio-site
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. **依存関係のインストール**
+```bash
+npm install
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+
+3. **開発サーバーの起動**
+```bash
+npm run dev
+
+```
+
+
+4. **ブラウザで確認**
+ターミナルに表示されたURL（例: `http://localhost:5173`）にアクセスしてください。
+
+## 📂 ディレクトリ構成
+
+```text
+portfolio-site/
+├── public/          # 静的ファイル（プロフィール画像など）
+├── src/
+│   ├── App.tsx      # メインアプリケーションコンポーネント
+│   ├── main.tsx     # エントリーポイント
+│   └── index.css    # Tailwind CSSのディレクティブ
+├── index.html       # HTMLテンプレート
+├── package.json     # 依存関係の定義
+├── tailwind.config.js # Tailwind設定
+└── vite.config.ts   # Vite設定
+
+```
+
+## 🌐 デプロイ
+
+このプロジェクトは **Vercel** へのデプロイに最適化されています。
+
+1. GitHubにプッシュする
+2. Vercelでリポジトリをインポートする
+3. 設定を変更せずにデプロイボタンを押すだけで公開可能です。
+
+## 👤 著者
+
+**畠中 聡志 (Satoshi Hatanaka)**
+
+* **Role**: AI Engineer / Former Business Owner
+* **Email**: hatahata009@gmail.com
+* **Github**: [https://github.com/hatahata009](https://www.google.com/search?q=https://github.com/hatahata009)
+
+---
+
+© 2026 Satoshi Hatanaka. All Rights Reserved.
+
+```
+
 ```
