@@ -129,7 +129,7 @@ const App = () => {
               </p>
               <p className="text-lg mb-8 max-w-2xl leading-relaxed text-gray-200">
                 ビジネスの最前線で培った「解決力」を、エンジニアリングへ。<br />
-                元・学習塾経営者が挑む、「テクノロジー」での価値創造。
+                元・学習塾経営者が挑む、「テクノロジー」による価値創造。
               </p>
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                 <a href="#contact" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full font-bold transition shadow-lg flex items-center gap-2">
