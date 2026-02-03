@@ -1,5 +1,6 @@
 import React from 'react';
-import { Github, Mail, User, Code, Briefcase, Award, ChevronDown, BookOpen, Brain, MessageCircle, Database } from 'lucide-react';
+// 1. ExternalLink を追加でインポートしました
+import { Github, Mail, User, Code, Briefcase, Award, ChevronDown, BookOpen, Brain, MessageCircle, Database, ExternalLink } from 'lucide-react';
 
 // --- データ定義 ---
 
@@ -8,7 +9,7 @@ const profile = {
   enName: "Satoshi Hatanaka",
   title: "AI Engineer / Former Business Owner",
   email: "hatahata009@gmail.com",
-  summary: "株式会社リクルートでの法人営業、8年間の学習塾経営を経てエンジニアへ転身。「対話と憧れから、主体性と自立を育む」という教育理念を軸に、今後は「IT×教育」で世の中の課題解決を目指します。経営者として培った「顧客視点」と「トライ＆エラー力」を武器に、技術で価値を創造します。",
+  summary: "株式会社リクルートでの法人営業、8年間の学習塾経営を経てエンジニアへ転身。もっと世の中に貢献するために、経営者として培った「顧客視点」と「トライ＆エラー力」を活かし、「テクノロジー」で価値を創造します。",
   strengths: [
     { title: "トライ＆エラー力", desc: "経営で培った仮説検証サイクルを回す力。バグや未経験の技術課題にも粘り強く向き合います。" },
     { title: "ビジネス視点", desc: "KPI設定から逆算した行動計画と、顧客（ユーザー）の真のニーズを捉える要件定義力。" },
@@ -17,15 +18,16 @@ const profile = {
 };
 
 const skills = [
-  { name: "Python", level: 90 },
-  { name: "Streamlit", level: 85 },
-  { name: "LangChain", level: 80 },
-  { name: "OpenAI API", level: 80 },
-  { name: "HTML/CSS", level: 70 },
-  { name: "SQL", level: 60 },
-  { name: "Git/GitHub", level: 75 },
+  { name: "Python", level: 70 },
+  { name: "Streamlit", level: 65 },
+  { name: "LangChain", level: 70 },
+  { name: "OpenAI API", level: 70 },
+  { name: "HTML/CSS", level: 65 },
+  { name: "SQL", level: 65 },
+  { name: "Git/GitHub", level: 65 },
 ];
 
+// 2. ここに demoUrl を追加しました。実際のURLに書き換えてください。
 const projects = [
   {
     id: 1,
@@ -38,20 +40,26 @@ const projects = [
       "レベル別AIチューターとの自由会話",
       "音声入力による発音・文法評価フィードバック",
       "シャドーイング・ディクテーションの実践練習モード"
-    ]
+    ],
+    // ↓↓↓ ここに実際のアプリのURLを入れてください
+    demoUrl: "https://english-app-deploy-29sh7uhksshpfdaeqhresz.streamlit.app/",
+    githubUrl: "https://github.com/hatahata009/english_app_deploy"
   },
   {
     id: 2,
-    title: "社内文書検索RAGシステム",
-    category: "Business Efficiency",
-    description: "社内の議事録や規定（PDF/Word/Text）をベクトル化し、自然言語で検索・回答生成を行う業務効率化ツール。参照元ドキュメントの提示機能付き。",
-    tech: ["Python", "LangChain", "ChromaDB", "Streamlit"],
+    title: "問い合わせ対応自動化エージェント",
+    category: "Customer Support & Automation",
+    description: "社内のマニュアルや商品情報、過去の対応履歴を学習し、顧客からの問い合わせに自動回答するAIエージェント。回答の根拠となるドキュメントも同時に提示し、業務効率化と品質均一化を実現。",
+    tech: ["Python", "LangChain", "ChromaDB", "Streamlit", "OpenAI API"],
     icon: <Database size={48} className="text-emerald-500" />,
     features: [
-      "社内文書（PDF/Docx）のアップロードとベクトル化",
-      "「社内文書検索」と「問い合わせ回答」のモード切替",
-      "回答の根拠となるソースファイルの提示"
-    ]
+      "社内規定・製品マニュアル（PDF/Word）の横断検索(RAG)",
+      "正確な情報に基づく問い合わせへの自動応答生成",
+      "回答の根拠となるソースファイルの参照提示機能"
+    ],
+    // ↓↓↓ ここに実際のアプリのURLを入れてください（なければ空文字 "" にするとボタンが消えます）
+    demoUrl: "https://customerconnectapp-ebqlsokwtzh9tpappbkwx7w.streamlit.app/",
+    githubUrl: "https://github.com/hatahata009/customer_connect_app"
   },
   {
     id: 3,
@@ -64,15 +72,18 @@ const projects = [
       "4人の異なる専門家ペルソナ（医療、料理、学業、習い事）",
       "キャラクターに応じた口調と専門知識による回答",
       "親しみやすいUI/UXデザイン"
-    ]
+    ],
+    // ↓↓↓ ここに実際のアプリのURLを入れてください
+    demoUrl: "https://childcareassistant-app-9ohzykaqhn59ukjrxdelpf.streamlit.app/",
+    githubUrl: "https://github.com/hatahata009/childcare_assistant-app"
   }
 ];
 
 const history = [
   {
-    year: "2018 - 2026",
-    title: "学習塾「GOJYUゼミ」経営 / 代表",
-    desc: "個人事業主として学習塾を開校。集客・指導・経営の全業務を担い、生徒数70名、売上成長率197%を達成。「対話」を重視した指導で400名以上の生徒をサポート。"
+    year: "2016",
+    title: "鹿児島大学 工学部 卒業",
+    desc: "情報生体システム工学科にて情報工学を専攻し、基礎的なITリテラシーを習得。"
   },
   {
     year: "2016 - 2017",
@@ -80,10 +91,10 @@ const history = [
     desc: "新卒・中途採用メディアの提案営業。香川・東京で新規開拓から深耕営業まで経験し、社内表彰を受賞。KPI達成に向けた行動力と顧客折衝力を習得。"
   },
   {
-    year: "2016",
-    title: "鹿児島大学 工学部 卒業",
-    desc: "情報生体システム工学科にて基礎的な工学知識を習得。"
-  }
+    year: "2018 - 2026",
+    title: "学習塾「GOJYUゼミ」経営 / 代表",
+    desc: "個人事業主として学習塾を開校。集客・指導・経営の全業務を担い、生徒数70名、売上成長率197%を達成。「対話」を重視した指導で400名以上の生徒をサポート。"
+  },
 ];
 
 // --- コンポーネント ---
@@ -130,12 +141,9 @@ const App = () => {
               </div>
             </div>
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-white/20 shadow-2xl overflow-hidden bg-gray-300 flex items-center justify-center text-gray-500">
-              {/* ここを img タグに変更します */}
-              <img 
-                src="/profile.jpg" 
-                alt="プロフィール写真" 
-                className="w-full h-full object-cover" 
-              />
+              {/* 写真を表示する場合は以下を使用 */}
+              {/* <img src="/profile.jpg" alt="プロフィール写真" className="w-full h-full object-cover" /> */}
+              <User size={80} />
             </div>
           </div>
         </div>
@@ -261,10 +269,16 @@ const App = () => {
                   </div>
 
                   <div className="flex gap-4">
-                    <a href="#" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-sm group">
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-sm group">
                       View Code <Github className="ml-1 w-4 h-4 group-hover:translate-x-1 transition" />
                     </a>
-                    {/* デモリンクがある場合はここに追加 */}
+                    
+                    {/* 3. デモリンクが存在する場合のみ表示する処理を追加 */}
+                    {project.demoUrl && (
+                      <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-pink-600 hover:text-pink-800 font-semibold text-sm group">
+                        Live Demo <ExternalLink className="ml-1 w-4 h-4 group-hover:-translate-y-1 group-hover:translate-x-1 transition" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -291,7 +305,7 @@ const App = () => {
         <section id="contact" className="text-center py-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-6">Contact</h2>
           <p className="text-gray-600 mb-8 max-w-xl mx-auto">
-            現在、フルリモートまたは鹿児島県内でのエンジニア職を探しています。<br />
+            現在、鹿児島市内またはフルリモートでのエンジニア職を探しています。<br />
             ご興味を持っていただけましたら、ぜひご連絡ください。
           </p>
           <a 
